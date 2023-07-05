@@ -8,18 +8,19 @@ logging.basicConfig(level=logging.INFO,format='[%(asctime)s]:%(message)s:')
 project_name='CNNclassifier'
 list_of_files=[
     ".github/workflows/.gitkeep",
-    f"scr/{project_name}/components/__init__.py",
-    f"scr/{project_name}/__init__.py",
-    f"scr/{project_name}/utils/__init__.py",
-    f"scr/{project_name}/congfig/configuration.py",
-    f"scr/{project_name}/pipeline/__init__.py",
-    f"scr/{project_name}/entity/__init__.py",
-    f"scr/{project_name}/constant/__init__.py",
+    f"src/{project_name}/components/__init__.py",
+    f"src/{project_name}/__init__.py",
+    f"src/{project_name}/utils/__init__.py",
+    f"src/{project_name}/congfig/configuration.py",
+    f"src/{project_name}/pipeline/__init__.py",
+    f"src/{project_name}/entity/__init__.py",
+    f"src/{project_name}/constant/__init__.py",
     "config/config.yaml",
     "dvc.yaml",
     "params.yaml",
     "setup.py",
-    "research/trials.ipynb"
+    "research/trials.ipynb",
+    "templates/index.html"
 ]
 for filepath in list_of_files:
     filepath=Path(filepath)
