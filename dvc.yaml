@@ -1,25 +1,25 @@
 stages: 
   data_ingestion:
-    cmd: python scr/CNNclassifier/pipeline/stage_01_data_ingestion.py
+    cmd: python src/CNNclassifier/pipeline/stage_01_data_ingestion.py
 
     deps: 
-      - scr/CNNclassifier/pipeline/stage_01_data_ingestion.py
+      - src/CNNclassifier/pipeline/stage_01_data_ingestion.py
       - config/config.yaml
 
     outs:
       - artifacts/data_ingestion
 
   prepare_base_model:
-    cmd: python scr/CNNclassifier/pipeline/stage_02_prepare_base_model.py
+    cmd: python src/CNNclassifier/pipeline/stage_02_prepare_base_model.py
 
     deps:
-      - scr/CNNclassifier/pipeline/stage_02_prepare_base_model.py
+      - src/CNNclassifier/pipeline/stage_02_prepare_base_model.py
       - config/config.yaml
 
     params:
       - IMAGE_SIZE
       - LEARNING_RATE
-      - INCLUSE_TOP
+      - INCLUDE_TOP
       - WEIGHTS
       - CLASSES
 
@@ -28,12 +28,12 @@ stages:
       - artifacts/prepare_base_model
 
   training:
-    cmd: python scr/CNNclassifier/pipeline/stage_03_training.py
+    cmd: python src/CNNclassifier/pipeline/stage_03_training.py
 
 
     deps: 
-      - scr/CNNclassifier/pipeline/stage_03_training.py
-      - scr/CNNclassifier/components/prepare_callbacks.py
+      - src/CNNclassifier/pipeline/stage_03_training.py
+      - src/CNNclassifier/components/prepare_callbacks.py
       - config/config.yaml
       - artifacts/data_ingestion/chicken_data
       - artifacts/prepare_base_model
@@ -41,19 +41,19 @@ stages:
     params: 
       - EPOCHS
       - BATCH_SIZE
-      - AUGUMENTATION
+      - AUGMENTATION
       - IMAGE_SIZE
 
     outs:
       - artifacts/training/model.h5
 
   evaluation:
-    cmd: python scr/CNNclassifier/pipeline/stage_04_evaluation.py
+    cmd: python src/CNNclassifier/pipeline/stage_04_evaluation.py
 
     deps:
-      - scr/CNNclassifier/pipeline/stage_04_evaluation.py
+      - src/CNNclassifier/pipeline/stage_04_evaluation.py
       - config/config.yaml
-      - artifacts/data_ingestio/chicken_data
+      - artifacts/data_ingestion/chicken_data
       - artifacts/training/model.h5
     
     params:
