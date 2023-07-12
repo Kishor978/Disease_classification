@@ -1,3 +1,4 @@
+# for tensorboard command is 'tensorboard --logdir path'
 from CNNclassifier.congfig.configuration import ConfigurationManager
 from CNNclassifier.components.prepare_callbacks import PrepareCallbacks
 from CNNclassifier.components.training import Training
