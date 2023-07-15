@@ -42,7 +42,9 @@ Now, open local host and port
 ### Run from terminal:
 
 docker build -t flasksimpleapp.azurecr.iio/mltest:latest .
+
 docker login flasksipmleapp.azurecr.io
+
 docker push flasksimple.azurecr.io/mltest:latest
 
 ### Deployment Steps:
