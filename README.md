@@ -22,6 +22,8 @@ Clone the repository.
 ### Step 1- Create the environment after cloning the repository
 
 python -m venv venv
+
+### Activate
 venv\Scripts\activate
 
 ### Step 2- install the requirements
