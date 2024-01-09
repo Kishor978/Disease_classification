@@ -20,17 +20,23 @@ Clone the repository.
 
 
 ### Step 1- Create the environment after cloning the repository
-
+```bash
 python -m venv venv
+```
 
 ### Activate
+``` bash
 venv\Scripts\activate
-
+```
 ### Step 2- install the requirements
 
+```bash
 pip install -r requirements.txt
+```
 <!-- finally run the following command -->
+```bash
 python app.py
+```
 Now, open local host and port
 
 ## DVC command
@@ -43,11 +49,13 @@ Now, open local host and port
 
 ### Run from terminal:
 
+```bash
 docker build -t flasksimpleapp.azurecr.iio/mltest:latest .
 
 docker login flasksipmleapp.azurecr.io
 
 docker push flasksimple.azurecr.io/mltest:latest
+```
 
 ### Deployment Steps:
 
